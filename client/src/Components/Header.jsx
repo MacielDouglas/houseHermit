@@ -2,14 +2,15 @@ import logo from '../assets/Logo.svg';
 import lupa from '../assets/search.svg';
 import menu from '../assets/menur.svg';
 import userLogo from '../assets/user.svg';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <header className="p-4 flex justify-between">
-      <a href="" className="flex items-center gap-1 w-10">
+      <Link to={'/'} className="flex items-center gap-1 w-10">
         <img src={logo} alt="" />
         <span className="font-bold text-xl">housecrab</span>
-      </a>
+      </Link>
       <div className="flex border border-gray-300 rounded-full py-2 px-4 gap-2 shadow-sm shadow-gray-500">
         <div className="self-center">Qualquer lugar</div>
         <div className="border-l border-gray-300"></div>
@@ -23,9 +24,9 @@ export default function Header() {
       </div>
       <div className="flex border border-gray-300 rounded-full py-2 px-4 gap-2 shadow-sm shadow-gray-500 items-center">
         <img className="w-4" src={menu} alt="" />
-        <div className="bg-neutral-500 p-2 rounded-full">
+        <Link to={'/login'} className="bg-neutral-500 p-2 rounded-full">
           <img className="w-4" src={userLogo} alt="" />
-        </div>
+        </Link>
       </div>
     </header>
   );
